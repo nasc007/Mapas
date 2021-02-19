@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <style>
+      .map {
+            height: 700px;
+            width: 100%;
+        }
+        .container {
+            width: 1024px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <title>Mapa do OpenLayers</title>
+  </head>
+  <body>
+    <h2>Exemplo de Mapa</h2>
+    <div id="map" class="map container"></div>
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-48.3396, -15.2878]),
+          zoom: 4
+        })
+      });
+    </script>
+  </body>
+</html>
